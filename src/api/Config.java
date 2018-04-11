@@ -1,4 +1,4 @@
-package config;
+package api;
 
 public class Config {
 
@@ -16,5 +16,7 @@ public class Config {
 		this.APIKey = APIKey;
 	}
 	
-	
+	public String toString() {
+		return APIKey;
+	}
 }
