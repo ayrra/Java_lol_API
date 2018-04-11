@@ -2,23 +2,23 @@ package api.Entities;
 
 public class Summoner {
 
-	private String id;
-	private String accountId;
+	private long id;
+	private long accountId;
 	private String name;
-	private String profileIconId;
-	private String revisionDate;
-	private String summonerLevel;
+	private int profileIconId;
+	private long revisionDate;
+	private long summonerLevel;
 	
-	public String getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
-	public String getAccountId() {
+	public long getAccountId() {
 		return accountId;
 	}
-	public void setAccountId(String accountId) {
+	public void setAccountId(long accountId) {
 		this.accountId = accountId;
 	}
 	public String getName() {
@@ -27,22 +27,22 @@ public class Summoner {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getProfileIconId() {
+	public int getProfileIconId() {
 		return profileIconId;
 	}
-	public void setProfileIconId(String profileIconId) {
+	public void setProfileIconId(int profileIconId) {
 		this.profileIconId = profileIconId;
 	}
-	public String getRevisionDate() {
+	public long getRevisionDate() {
 		return revisionDate;
 	}
-	public void setRevisionDate(String revisionDate) {
+	public void setRevisionDate(long revisionDate) {
 		this.revisionDate = revisionDate;
 	}
-	public String getSummonerLevel() {
+	public long getSummonerLevel() {
 		return summonerLevel;
 	}
-	public void setSummonerLevel(String summonerLevel) {
+	public void setSummonerLevel(long summonerLevel) {
 		this.summonerLevel = summonerLevel;
 	}
 	
