@@ -6,7 +6,7 @@ public class ParticipantTimeline {
 
 	private String lane;
 	private int participantId;
-	private Map<String, Double> csDiffPerMinDealtas;
+	private Map<String, Double> csDiffPerMinDeltas;
 	private Map<String, Double> goldPerMinDeltas;
 	private Map<String, Double> xpDiffPerMinDeltas;
 	private Map<String, Double> creepsPerMinDeltas;
@@ -27,11 +27,11 @@ public class ParticipantTimeline {
 	public void setParticipantId(int participantId) {
 		this.participantId = participantId;
 	}
-	public Map<String, Double> getCsDiffPerMinDealtas() {
-		return csDiffPerMinDealtas;
+	public Map<String, Double> getCsDiffPerMinDeltas() {
+		return csDiffPerMinDeltas;
 	}
-	public void setCsDiffPerMinDealtas(Map<String, Double> csDiffPerMinDealtas) {
-		this.csDiffPerMinDealtas = csDiffPerMinDealtas;
+	public void setCsDiffPerMinDeltas(Map<String, Double> csDiffPerMinDealtas) {
+		this.csDiffPerMinDeltas = csDiffPerMinDealtas;
 	}
 	public Map<String, Double> getGoldPerMinDeltas() {
 		return goldPerMinDeltas;
