@@ -1,8 +1,10 @@
 package api;
 
-import SpectatorV3.CurrentGameService;
 import api.Entities.CurrentGameInfo;
+import api.Entities.Match;
 import api.Entities.Summoner;
+import api.MatchV3.MatchService;
+import api.SpectatorV3.CurrentGameService;
 import api.SummonerV3.SummonerService;
 
 public class RiotAPI extends API {
@@ -37,6 +39,12 @@ public class RiotAPI extends API {
 		CurrentGameInfo gameInfo = CurrentGameService.getGameData(url);
 		
 		return gameInfo;
+	}
+
+	public Match getMatchFromId(long matchId) {
+		String url = getBaseUrl() + "match/v3/matches/" + matchId + "?api_key=" + getAPIKey();
+		Match match = MatchService.getMatchData(url);
+		return match;
 	}
 
 

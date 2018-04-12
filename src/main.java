@@ -5,8 +5,14 @@ import api.RiotAPI;
 import api.Entities.BannedChampion;
 import api.Entities.CurrentGameInfo;
 import api.Entities.CurrentGameParticipant;
+import api.Entities.Match;
+import api.Entities.Participant;
+import api.Entities.ParticipantIdentity;
+import api.Entities.ParticipantStats;
 import api.Entities.Region;
 import api.Entities.Summoner;
+import api.Entities.TeamBans;
+import api.Entities.TeamStats;
 
 public class main {
 
@@ -21,18 +27,17 @@ public class main {
 		RiotAPI api = new RiotAPI(APIConfig, Region.NA);
 		
 		
-		
 		//for now we will only deal with the NA servers
 		//lets get summoners first!
-		Summoner summoner = api.GetSummonerByName("short_dog");
+		Summoner summoner = api.GetSummonerByName("iuxxbunny");
 		
 		System.out.println(summoner.getName());
 		System.out.println(summoner.getId());
 		System.out.println(summoner.getSummonerLevel());
 		System.out.println(summoner.getAccountId());
 		
-		
-		
+
+		/*
 		//lets test spectator **Check this for null to see if the game exists
 		CurrentGameInfo currentGameInfo = api.GetActiveGame(summoner.getId());
 	
@@ -49,9 +54,26 @@ public class main {
 		for (BannedChampion bc : bannedChamps) {
 			System.out.println("Team: " + bc.getTeamId() + " Banned Champion: " + bc.getChampionId());
 		}
+		*/
+		//match
+		Match match = api.getMatchFromId(2761047942L);
+
+		List<ParticipantIdentity> participantIdentities = match.getParticipantIdentities();
+		List<Participant> participants = match.getParticipants();
 		
+		for (ParticipantIdentity pi2 : participantIdentities) {
+			for (Participant p : participants) {
+				if (p.getStats().getParticipantId() == pi2.getParticipantId()) {
+					System.out.print("player id: " + pi2.getParticipantId());
+					System.out.println(" summoner name: " + pi2.getPlayer().getSummonerName());
+					System.out.println("Kills: " + p.getStats().getKills());
+					System.out.println("Deaths: " + p.getStats().getDeaths());
+				}
+			}
+		}
+	
 		
-		//
+
 		
 	}
 

@@ -1,6 +1,7 @@
 package api;
 
 import api.Entities.CurrentGameInfo;
+import api.Entities.Match;
 import api.Entities.Summoner;
 
 //using this abstract class for organization
@@ -29,5 +30,8 @@ abstract class API {
 	
 	//spectator-v3 **not implementing featured games
 	abstract CurrentGameInfo GetActiveGame(long summonerId);
+	
+	//match-v3
+	abstract Match getMatchFromId(long matchId);
 	
 }

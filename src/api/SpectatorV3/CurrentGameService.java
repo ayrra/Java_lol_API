@@ -1,4 +1,4 @@
-package SpectatorV3;
+package api.SpectatorV3;
 
 import api.Helpers;
 import api.Entities.CurrentGameInfo;
