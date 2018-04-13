@@ -3,6 +3,7 @@ package api;
 import api.Entities.CurrentGameInfo;
 import api.Entities.Match;
 import api.Entities.MatchList;
+import api.Entities.MatchTimeline;
 import api.Entities.Summoner;
 import api.MatchV3.MatchService;
 import api.SpectatorV3.CurrentGameService;
@@ -54,6 +55,21 @@ public class RiotAPI extends API {
 		MatchList matchList = MatchService.getMatchList(url);
 
 		return matchList;
+	}
+
+	public MatchList getRecentMatchListFromAccountId(long accountId) {
+		String url = getBaseUrl() + "match/v3/matchlists/by-account/" + accountId + "/recent/?api_key=" + getAPIKey();
+		MatchList matchList = MatchService.getMatchList(url);
+
+		return matchList;
+	}
+
+	
+	public MatchTimeline getMatchTimeline(long matchId) {
+		String url = getBaseUrl() + "match/v3/timelines/by-match/" + matchId + "?api_key=" + getAPIKey();
+		MatchTimeline matchTimeline = MatchService.getMatchTimeline(url);
+
+		return matchTimeline;
 	}
 
 

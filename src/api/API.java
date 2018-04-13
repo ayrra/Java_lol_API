@@ -3,6 +3,7 @@ package api;
 import api.Entities.CurrentGameInfo;
 import api.Entities.Match;
 import api.Entities.MatchList;
+import api.Entities.MatchTimeline;
 import api.Entities.Summoner;
 
 //using this abstract class for organization
@@ -36,5 +37,7 @@ abstract class API {
 	abstract Match getMatchFromId(long matchId);
 	//we can later add start and end index to getMatchlistFromAccountId
 	abstract MatchList getMatchListFromAccountId(long accountId);
+	abstract MatchList getRecentMatchListFromAccountId(long accountId);
+	abstract MatchTimeline getMatchTimeline(long matchId);
 	
 }
