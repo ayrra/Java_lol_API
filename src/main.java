@@ -17,6 +17,7 @@ import api.Entities.Participant;
 import api.Entities.ParticipantIdentity;
 import api.Entities.ParticipantStats;
 import api.Entities.Region;
+import api.Entities.ShardStatus;
 import api.Entities.Summoner;
 import api.Entities.TeamBans;
 import api.Entities.TeamStats;
@@ -39,6 +40,10 @@ public class main {
 		Summoner summoner = api.GetSummonerByName("notascientist");
 		
 		System.out.println(summoner.getAccountId());
+		
+		ShardStatus ss = api.getLOLStatus();
+		
+		System.out.println(ss.getName());
 		
 	}
 

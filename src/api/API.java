@@ -4,6 +4,7 @@ import api.Entities.CurrentGameInfo;
 import api.Entities.Match;
 import api.Entities.MatchList;
 import api.Entities.MatchTimeline;
+import api.Entities.ShardStatus;
 import api.Entities.Summoner;
 
 //using this abstract class for organization
@@ -39,5 +40,8 @@ abstract class API {
 	abstract MatchList getMatchListFromAccountId(long accountId);
 	abstract MatchList getRecentMatchListFromAccountId(long accountId);
 	abstract MatchTimeline getMatchTimeline(long matchId);
+	
+	//status-v3
+	abstract ShardStatus getLOLStatus();
 	
 }

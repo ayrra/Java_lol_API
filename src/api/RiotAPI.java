@@ -4,10 +4,12 @@ import api.Entities.CurrentGameInfo;
 import api.Entities.Match;
 import api.Entities.MatchList;
 import api.Entities.MatchTimeline;
+import api.Entities.ShardStatus;
 import api.Entities.Summoner;
 import api.MatchV3.MatchService;
 import api.SpectatorV3.CurrentGameService;
 import api.SummonerV3.SummonerService;
+import api.lolstatusV3.StatusService;
 
 public class RiotAPI extends API {
 
@@ -70,6 +72,14 @@ public class RiotAPI extends API {
 		MatchTimeline matchTimeline = MatchService.getMatchTimeline(url);
 
 		return matchTimeline;
+	}
+
+	
+	public ShardStatus getLOLStatus() {
+		String url = getBaseUrl() + "status/v3/shard-data" + "?api_key=" + getAPIKey();
+		ShardStatus shardStatus = StatusService.getStatus(url);
+		System.out.println(url);
+		return shardStatus;
 	}
 
 
