@@ -1,4 +1,4 @@
-package api.lolstatusV3;
+package api.LolstatusV3;
 
 import api.Helpers;
 import api.Entities.ShardStatus;
